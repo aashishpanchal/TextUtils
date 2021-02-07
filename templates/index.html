@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NLP Filter</title>
+    <style>
+        h1 {
+            font-family: cursive;
+            text-align: center;
+            color: rgb(174, 255, 127);
+            text-shadow: 0px 0px 15px greenyellow;
+            margin-bottom: 45px;
+        }
+
+        form {
+            text-align: center;
+        }
+
+        #text-area {
+            outline: none;
+            border-radius: 15px;
+            box-shadow: 0px 0px 15px gray;
+            padding: 20px;
+            font-size: 1.2rem;
+            background-color: rgba(20, 238, 154, 0.486);
+            border: none;
+        }
+
+        .btn {
+            margin-top: 50px;
+        }
+
+        .btn button {
+            border: 2px solid red;
+            color: red;
+            padding: 10px;
+            background-color: transparent;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .btn button:hover {
+            cursor: pointer;
+            color: #fff;
+            background-color: red;
+        }
+
+        .check-point {
+            width: 250px;
+            text-align: left;
+            margin: auto;
+            margin-top: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Welcome to the text analyazer. Enter your text below</h1>
+    <form action="/analyze" method="POST"> {% csrf_token %}
+        <textarea name="text" id="text-area" cols="80" rows="15"></textarea>
+        <div class="check-point">
+            <div><input type="checkbox" name="removepunc"> Remove Punctuations</div>
+            <div><input type="checkbox" name="uppercase"> Upper case</div>
+            <div><input type="checkbox" name="lowercase"> lower case</div>
+            <div><input type="checkbox" name="removespace"> Remove Space</div>
+            <div><input type="checkbox" name="total-char"> Count char</div>
+        </div>
+        <div class="btn">
+            <button type="submit">Analyze Text</button>
+        </div>
+    </form>
+</body>
+
+</html>

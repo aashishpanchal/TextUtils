@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analyze Text</title>
+</head>
+<style>
+    h1 {
+        font-family: cursive;
+        text-align: center;
+        color: rgb(174, 255, 127);
+        text-shadow: 0px 0px 15px greenyellow;
+        margin-bottom: 45px;
+    }
+
+    p,
+    pre {
+        text-align: justify;
+        width: 500px;
+        height: 450px;
+        margin: auto;
+        border-radius: 15px;
+        box-shadow: 0px 0px 15px gray;
+        padding: 20px;
+        font-family: cursive;
+        background-color: rgba(20, 238, 154, 0.486);
+        overflow-x: auto;
+    }
+
+    h3 {
+        font-family: Arial, Helvetica, sans-serif;
+        color: rgb(22, 89, 214);
+        text-align: center;
+    }
+
+    .text-data .text {
+        margin-left: 10px;
+        margin-top: 10px;
+    }
+
+    .text-data {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    h2 {
+        color: red;
+        font-family: Arial, Helvetica, sans-serif;
+        text-shadow: 0px 0px 15px red;
+    }
+</style>
+
+<body>
+    <h1>Your Text Analyzed</h1>
+    <div class="text-data">
+        <div class="text">
+            <h3>Normal text</h3>
+            <pre>{{ text }}</pre>
+        </div>
+
+        {% if analyzed_text != "" %}
+        <div class="text">
+            <h3>Remove all Punctuations</h3>
+            <pre>{{analyzed_text}}</pre>
+        </div>
+        {% endif %}
+
+        {% if upper != "" %}
+        <div class="text">
+            <h3>Text Convert Upper</h3>
+            <pre>{{upper}}</pre>
+        </div>
+        {% endif %}
+
+        {% if lower != "" %}
+        <div class="text">
+            <h3>Text Convert Lower</h3>
+            <pre>{{lower}}</pre>
+        </div>
+        {% endif %}
+
+        {% if space != "" %}
+        <div class="text">
+            <h3>Remove Extra Space Lower</h3>
+            <pre>{{space}}</pre>
+        </div>
+        {% endif %}
+
+        {% if fullanalyze != "" %}
+        <div class="text">
+            <h3>Fully Analyze</h3>
+            <p>{{fullanalyze}}</p>
+        </div>
+        {% endif %}
+
+        {% if char != "" %}
+        <div class="text">
+            <h2>Total char in you string = {{char}}</h2>
+        </div>
+        {% endif %}
+    </div>
+</body>
+
+</html>
